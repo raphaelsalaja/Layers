@@ -22,9 +22,3 @@ struct LayerBackground: View {
         }
     }
 }
-
-#Preview {
-    LayerBackground {
-        LayerPlayground()
-    }
-}

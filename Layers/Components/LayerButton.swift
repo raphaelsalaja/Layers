@@ -104,7 +104,7 @@ struct LayerButton: View {
                         .transition(.scale(scale: 1.0))
                         .matchedGeometryEffect(
                             id: "layer.button.text.\(id)",
-                            in: LayerConstants.Animations.Namespaces.namespace
+                            in: Constants.Animations.Namespaces.namespace
                         )
                         .foregroundColor(color.isDark ? Color.white : Color.black)
                         
@@ -145,7 +145,7 @@ struct LayerButton: View {
                     }
                     .matchedGeometryEffect(
                         id: "layer.button.select.\(id)",
-                        in: LayerConstants.Animations.Namespaces.namespace
+                        in: Constants.Animations.Namespaces.namespace
                     )
                     
                     if selected {
@@ -166,7 +166,7 @@ struct LayerButton: View {
                             )
                             .matchedGeometryEffect(
                                 id: "layer.button.select.icon.\(id)",
-                                in: LayerConstants.Animations.Namespaces.namespace
+                                in: Constants.Animations.Namespaces.namespace
                             )
                     }
                 }

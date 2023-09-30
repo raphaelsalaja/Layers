@@ -32,8 +32,8 @@ struct LayerTitle: View {
             Text(title).layerTitleStyle()
         }
         .matchedGeometryEffect(
-            id: LayerConstants.Animations.Namespaces.title,
-            in: LayerConstants.Animations.Namespaces.namespace
+            id: Constants.Animations.Namespaces.title,
+            in: Constants.Animations.Namespaces.namespace
         )
         .transition(.opacity.combined(with: .scale(scale: 1.0)))
     }
@@ -47,8 +47,8 @@ struct LayerDescription: View {
             Text(description).layerDescriptionStyle()
         }
         .matchedGeometryEffect(
-            id: LayerConstants.Animations.Namespaces.description,
-            in: LayerConstants.Animations.Namespaces.namespace
+            id: Constants.Animations.Namespaces.description,
+            in: Constants.Animations.Namespaces.namespace
         )
         .transition(.opacity.combined(with: .scale(scale: 1.0)))
     }

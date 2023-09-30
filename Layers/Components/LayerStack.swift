@@ -23,21 +23,21 @@ struct LayerStack: View {
                 VStack(alignment: .leading, spacing: 24) {
                     content
                 }
-                    .padding(32)
-                    .background(
-                        Color(.layerBackground)
-                            .matchedGeometryEffect(
-                                id: LayerConstants.Animations.Namespaces.background,
-                                in: LayerConstants.Animations.Namespaces.namespace
-                            )
-                    )
-                    .mask {
-                        RoundedRectangle(cornerRadius: 32, style: .continuous)
-                            .matchedGeometryEffect(
-                                id: LayerConstants.Animations.Namespaces.mask,
-                                in: LayerConstants.Animations.Namespaces.namespace
-                            )
-                    }
+                .padding(32)
+                .background(
+                    Color(Constants.Colors.background)
+                        .matchedGeometryEffect(
+                            id: Constants.Animations.Namespaces.background,
+                            in: Constants.Animations.Namespaces.namespace
+                        )
+                )
+                .mask {
+                    RoundedRectangle(cornerRadius: 32, style: .continuous)
+                        .matchedGeometryEffect(
+                            id: Constants.Animations.Namespaces.mask,
+                            in: Constants.Animations.Namespaces.namespace
+                        )
+                }
             }
         }
         .layerPadding()
@@ -49,9 +49,7 @@ struct LayerStack: View {
         Color(.black.opacity(0.25)).ignoresSafeArea()
 
         LayerStack {
-            VStack {
-                Text("Hello, World!")
-            }
+            VStack {}
         }
     }
 }

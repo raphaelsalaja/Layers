@@ -7,10 +7,17 @@
 
 import SwiftUI
 
+struct Plain: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .transition(.scale(scale: 1.0))
+    }
+}
+
 struct LayerPadding: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .padding(LayerConstants.Styling.padding)
+            .padding(Constants.Styling.padding)
     }
 }
 
@@ -29,7 +36,48 @@ struct LayerDescriptionStyle: ViewModifier {
     }
 }
 
+struct ScaleButtonStyle: ButtonStyle {
+    public init() {}
+
+    public func makeBody(configuration: Self.Configuration) -> some View {
+        configuration.label
+            .scaleEffect(configuration.isPressed ? Constants.Scale.pressed : 1)
+            // .brightness(configuration.isPressed ? Constants.Scale.brightness : 0)
+            .animation(.easeOut, value: configuration.isPressed)
+    }
+}
+
+extension ButtonStyle where Self == ScaleButtonStyle {
+    static var scale: ScaleButtonStyle {
+        ScaleButtonStyle()
+    }
+}
+
+extension Color {
+    var isDark: Bool {
+        var red: CGFloat = 0
+        var green: CGFloat = 0
+        var blue: CGFloat = 0
+
+        guard UIColor(self).getRed(&red, green: &green, blue: &blue, alpha: nil)
+        else {
+            return false
+        }
+
+        let luminance =
+            Constants.Luminance.red * red +
+            Constants.Luminance.green * green +
+            Constants.Luminance.blue * blue
+
+        return luminance < Constants.Luminance.threshold
+    }
+}
+
 extension View {
+    func plainTransition() -> some View {
+        modifier(Plain())
+    }
+
     func layerPadding() -> some View {
         modifier(LayerPadding())
     }
