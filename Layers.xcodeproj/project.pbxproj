@@ -23,8 +23,11 @@
 		1111504A2AC8CD5A00C0D356 /* LayerActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111150392AC8CD5A00C0D356 /* LayerActions.swift */; };
 		1111504B2AC8CD5A00C0D356 /* Layer+Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111503A2AC8CD5A00C0D356 /* Layer+Example.swift */; };
 		1111504C2AC8CD5A00C0D356 /* Layer+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111503C2AC8CD5A00C0D356 /* Layer+Constants.swift */; };
-		1111504D2AC8CD5A00C0D356 /* Layer+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111503D2AC8CD5A00C0D356 /* Layer+Animations.swift */; };
 		1111504E2AC8CD5A00C0D356 /* Layer+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111503E2AC8CD5A00C0D356 /* Layer+Extensions.swift */; };
+		111150512AC96F4500C0D356 /* Layer+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111150502AC96F4500C0D356 /* Layer+Helpers.swift */; };
+		111150532AC99EAA00C0D356 /* Layer+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111150522AC99EAA00C0D356 /* Layer+Animations.swift */; };
+		111150562AC9B66F00C0D356 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 111150552AC9B66F00C0D356 /* ConfettiSwiftUI */; };
+		111150592AC9BD2300C0D356 /* FluidGradient in Frameworks */ = {isa = PBXBuildFile; productRef = 111150582AC9BD2300C0D356 /* FluidGradient */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,8 +48,9 @@
 		111150392AC8CD5A00C0D356 /* LayerActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayerActions.swift; sourceTree = "<group>"; };
 		1111503A2AC8CD5A00C0D356 /* Layer+Example.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Layer+Example.swift"; sourceTree = "<group>"; };
 		1111503C2AC8CD5A00C0D356 /* Layer+Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Layer+Constants.swift"; sourceTree = "<group>"; };
-		1111503D2AC8CD5A00C0D356 /* Layer+Animations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Layer+Animations.swift"; sourceTree = "<group>"; };
 		1111503E2AC8CD5A00C0D356 /* Layer+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Layer+Extensions.swift"; sourceTree = "<group>"; };
+		111150502AC96F4500C0D356 /* Layer+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Layer+Helpers.swift"; sourceTree = "<group>"; };
+		111150522AC99EAA00C0D356 /* Layer+Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Layer+Animations.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				111150562AC9B66F00C0D356 /* ConfettiSwiftUI in Frameworks */,
+				111150592AC9BD2300C0D356 /* FluidGradient in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,8 +125,9 @@
 			children = (
 				1111503A2AC8CD5A00C0D356 /* Layer+Example.swift */,
 				1111503C2AC8CD5A00C0D356 /* Layer+Constants.swift */,
-				1111503D2AC8CD5A00C0D356 /* Layer+Animations.swift */,
 				1111503E2AC8CD5A00C0D356 /* Layer+Extensions.swift */,
+				111150502AC96F4500C0D356 /* Layer+Helpers.swift */,
+				111150522AC99EAA00C0D356 /* Layer+Animations.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -141,6 +148,10 @@
 			dependencies = (
 			);
 			name = Layers;
+			packageProductDependencies = (
+				111150552AC9B66F00C0D356 /* ConfettiSwiftUI */,
+				111150582AC9BD2300C0D356 /* FluidGradient */,
+			);
 			productName = Layers;
 			productReference = 1111501E2AC8CCDF00C0D356 /* Layers.app */;
 			productType = "com.apple.product-type.application";
@@ -169,6 +180,10 @@
 				Base,
 			);
 			mainGroup = 111150152AC8CCDF00C0D356;
+			packageReferences = (
+				111150542AC9B66F00C0D356 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
+				111150572AC9BD2300C0D356 /* XCRemoteSwiftPackageReference "FluidGradient" */,
+			);
 			productRefGroup = 1111501F2AC8CCDF00C0D356 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -204,13 +219,14 @@
 				111150242AC8CCDF00C0D356 /* ContentView.swift in Sources */,
 				111150222AC8CCDF00C0D356 /* LayersApp.swift in Sources */,
 				1111504A2AC8CD5A00C0D356 /* LayerActions.swift in Sources */,
+				111150512AC96F4500C0D356 /* Layer+Helpers.swift in Sources */,
 				1111504E2AC8CD5A00C0D356 /* Layer+Extensions.swift in Sources */,
+				111150532AC99EAA00C0D356 /* Layer+Animations.swift in Sources */,
 				1111504C2AC8CD5A00C0D356 /* Layer+Constants.swift in Sources */,
 				111150432AC8CD5A00C0D356 /* LayerButton.swift in Sources */,
 				111150442AC8CD5A00C0D356 /* LayerHeader.swift in Sources */,
 				111150422AC8CD5A00C0D356 /* LayerImagePicker.swift in Sources */,
 				111150452AC8CD5A00C0D356 /* LayerTextField.swift in Sources */,
-				1111504D2AC8CD5A00C0D356 /* Layer+Animations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +432,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		111150542AC9B66F00C0D356 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/simibac/ConfettiSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.0;
+			};
+		};
+		111150572AC9BD2300C0D356 /* XCRemoteSwiftPackageReference "FluidGradient" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Cindori/FluidGradient";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		111150552AC9B66F00C0D356 /* ConfettiSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 111150542AC9B66F00C0D356 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
+			productName = ConfettiSwiftUI;
+		};
+		111150582AC9BD2300C0D356 /* FluidGradient */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 111150572AC9BD2300C0D356 /* XCRemoteSwiftPackageReference "FluidGradient" */;
+			productName = FluidGradient;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 111150162AC8CCDF00C0D356 /* Project object */;
 }

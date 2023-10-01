@@ -27,11 +27,16 @@ public enum Constants {
     enum Animations {
         enum Namespaces {
             static let namespace: Namespace.ID = Namespace().wrappedValue
+
             static let background = "layer.background"
             static let mask = "layer.mask"
             static let title = "layer.title"
             static let description = "layer.description"
             static let content = "layer.content"
+            enum Button {
+                static let text = "layer.button.text"
+                static let icon = "layer.button.icon"
+            }
         }
 
         enum Transitions {

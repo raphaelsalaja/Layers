@@ -1,18 +1,54 @@
 //
 //  Layer+Animations.swift
-//  Eyedee
+//  Layers
 //
-//  Created by Raphael Salaja on 29/09/2023.
+//  Created by Raphael Salaja on 01/10/2023.
 //
 
 import SwiftUI
 
-struct Layer_Animations: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+struct AnimateParentAction {
+    private let action: (Animation?) -> Void
+    init(action: @escaping (Animation?) -> Void) {
+        self.action = action
+    }
+
+    func callAsFunction() {
+        action(nil)
+    }
+
+    func callAsFunction(overrideAnimation: Animation) {
+        action(overrideAnimation)
     }
 }
 
-#Preview {
-    Layer_Animations()
+private struct AnimateParentActionKey: EnvironmentKey {
+    static var defaultValue: AnimateParentAction = .init(action: { _ in })
+}
+
+extension EnvironmentValues {
+    var animateParent: AnimateParentAction {
+        get { self[AnimateParentActionKey.self] }
+        set { self[AnimateParentActionKey.self] = newValue }
+    }
+}
+
+private struct OnAnimateParentCalledModifier: ViewModifier {
+    let animation: Animation
+    @State private var animationToggle = false
+    @State private var overrideAnimation: Animation?
+    func body(content: Content) -> some View {
+        content
+            .environment(\.animateParent, AnimateParentAction(action: { overrideAnimation in
+                self.overrideAnimation = overrideAnimation
+                animationToggle.toggle()
+            }))
+            .animation(overrideAnimation ?? animation, value: animationToggle)
+    }
+}
+
+extension View {
+    func childTriggeredAnimation(animation: Animation) -> some View {
+        modifier(OnAnimateParentCalledModifier(animation: animation))
+    }
 }

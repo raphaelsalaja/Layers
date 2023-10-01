@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+// MARK: - ViewModifier
+
 struct Plain: ViewModifier {
     func body(content: Content) -> some View {
         content
@@ -32,9 +34,25 @@ struct LayerDescriptionStyle: ViewModifier {
     func body(content: Content) -> some View {
         content
             .font(.system(.headline, design: .rounded, weight: .medium))
+            .minimumScaleFactor(0.1)
             .foregroundColor(Color(.systemGray))
     }
 }
+
+struct LayerButtonStyle: ViewModifier {
+    var color: Color
+
+    func body(content: Content) -> some View {
+        content
+            .fixedSize()
+            .font(.body)
+            .fontWeight(.bold)
+            .fontDesign(.rounded)
+            .foregroundColor(color.isDark ? Color.white : Color.black)
+    }
+}
+
+// MARK: - ButtonStyle
 
 struct ScaleButtonStyle: ButtonStyle {
     public init() {}
@@ -42,8 +60,8 @@ struct ScaleButtonStyle: ButtonStyle {
     public func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
             .scaleEffect(configuration.isPressed ? Constants.Scale.pressed : 1)
-            // .brightness(configuration.isPressed ? Constants.Scale.brightness : 0)
-            .animation(.easeOut, value: configuration.isPressed)
+            .transition(.scale(scale: 1.0))
+//            .animation(.linear, value: configuration.isPressed)
     }
 }
 
@@ -52,6 +70,8 @@ extension ButtonStyle where Self == ScaleButtonStyle {
         ScaleButtonStyle()
     }
 }
+
+// MARK: - Color
 
 extension Color {
     var isDark: Bool {
@@ -73,6 +93,8 @@ extension Color {
     }
 }
 
+// MARK: - View
+
 extension View {
     func plainTransition() -> some View {
         modifier(Plain())
@@ -88,5 +110,9 @@ extension View {
 
     func layerDescriptionStyle() -> some View {
         modifier(LayerDescriptionStyle())
+    }
+
+    func layerButtonStyle(color color: Color) -> some View {
+        modifier(LayerButtonStyle(color: color))
     }
 }

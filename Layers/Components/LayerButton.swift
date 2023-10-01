@@ -40,27 +40,25 @@ struct LayerButton: View {
         case select
     }
     
-    @State var id: String
-    @State var text: String
+    @Binding var text: String
+    
+    @State var press = false
     @State var action: () -> Void
     @State var color: Color
     @State var icon: String
     @State var disabled: Bool
     @State var type: LayerButtonType
-    
     @State var selected: Bool = false
     
     internal init(
-        id: String = UUID().uuidString,
-        text: String = "Button",
+        text: Binding<String> = .constant(""),
         color: Color = Color(.systemBlue),
         icon: String = "",
         disabled: Bool = false,
         type: LayerButtonType = .single,
         action: @escaping () -> Void = {}
     ) {
-        self.id = id
-        self.text = text
+        self._text = text
         self.action = action
         self.color = color
         self.icon = icon
@@ -69,7 +67,7 @@ struct LayerButton: View {
     }
     
     func selectOperation() {
-        action
+        action()
         
         withAnimation(.snappy(duration: 0.25)) {
             selected.toggle()
@@ -85,39 +83,50 @@ struct LayerButton: View {
     }
     
     var single: some View {
-        Button(action: action) {
+        ZStack {
             VStack(alignment: .center) {
                 HStack(alignment: .center) {
-                    Spacer(minLength: 0)
-                    
                     if icon != "" {
                         Image(systemName: icon)
                             .font(.body)
                             .fontWeight(.bold)
                             .foregroundColor(color.isDark ? Color.white : Color.black)
+                            .matchedGeometryEffect(
+                                id: Constants.Animations.Namespaces.Button.icon,
+                                in: Constants.Animations.Namespaces.namespace
+                            )
                     }
                     
                     Text(text)
-                        .font(.body)
-                        .fontWeight(.bold)
-                        .fontDesign(.rounded)
-                        .transition(.scale(scale: 1.0))
+                        .layerButtonStyle(color: color)
                         .matchedGeometryEffect(
-                            id: "layer.button.text.\(id)",
+                            id: Constants.Animations.Namespaces.Button.text,
                             in: Constants.Animations.Namespaces.namespace
                         )
-                        .foregroundColor(color.isDark ? Color.white : Color.black)
-                        
-                    Spacer(minLength: 0)
                 }
             }
+            .transition(.scale(scale: 1.0))
+            .matchedGeometryEffect(
+                id: "Background",
+                in: Constants.Animations.Namespaces.namespace
+            )
             .padding(16)
             .frame(maxWidth: .infinity)
             .background(disabled ? color.opacity(0.5) : color)
             .clipShape(RoundedRectangle(cornerRadius: 100, style: .continuous))
+            .scaleEffect(press ? 0.85 : 1)
+            .animation(.spring(response: 0.4, dampingFraction: 0.6), value: press)
+            .gesture(
+                DragGesture(minimumDistance: 0)
+                    .onChanged { _ in
+                        press = true
+                    }
+                    .onEnded { _ in
+                        press = false
+                        action()
+                    }
+            )
         }
-        .disabled(disabled)
-        .buttonStyle(ScaleButtonStyle())
     }
     
     var select: some View {
@@ -144,7 +153,7 @@ struct LayerButton: View {
                         Spacer(minLength: 0)
                     }
                     .matchedGeometryEffect(
-                        id: "layer.button.select.\(id)",
+                        id: "layer.button.select.\(text)",
                         in: Constants.Animations.Namespaces.namespace
                     )
                     
@@ -165,7 +174,7 @@ struct LayerButton: View {
                                 )
                             )
                             .matchedGeometryEffect(
-                                id: "layer.button.select.icon.\(id)",
+                                id: "layer.button.select.icon.\(icon)",
                                 in: Constants.Animations.Namespaces.namespace
                             )
                     }

@@ -5,96 +5,51 @@
 //  Created by Raphael Salaja on 30/09/2023.
 //
 
+import ConfettiSwiftUI
 import SwiftUI
 
 struct ContentView: View {
-    @Namespace private var namespace
-    
-    @State var index = 0
-    
-    let headers: [String] = [
-        "Heading 1",
-        "Heading 2",
-        "Heading 3",
-        "Heading 4"
-    ]
-    
-    let descriptions: [String] = [
-        """
-        Ad elit do deserunt elit Lorem consectetur ipsum cillum labore id.
-        """,
-        """
-        Consequat cillum amet sint elit ut ut exercitation.
-        """,
-        """
-        Excepteur nostrud anim mollit magna sunt aliqua aliqua do esse.
-        """,
-        """
-        Eu laborum consequat laboris eiusmod dolor.
-        """
-    ]
-    
-    let contents: [LayerContent] = [
-        LayerContent(),
-        LayerContent(),
-        LayerContent {
-            LayerImagePicker()
-        },
-        LayerContent()
-    ]
-    
+    @State var show: Bool
+
+    @State var counter: Int = 0
+
+    init() {
+        show = false
+    }
+
     var body: some View {
-        LayerStack {
-            HStack {
-                LayerTitle(title: headers[index]).id(headers[index])
-                    
-                LayerIcon(icon: "xmark")
-            }
-                
-            LayerDescription(description: descriptions[index]).id(descriptions[index])
-                
-            ForEach(contents.indices) { position in
-                if position == self.index {
-                    self.contents[index]
-                        .matchedGeometryEffect(
-                            id: Constants.Animations.Namespaces.content + String(index),
-                            in: namespace
-                        )
+        NavigationStack {
+            ZStack {
+                if show {
+                    LayerBackground()
+                        .zIndex(2)
+
+                    Layer_Example()
+                        .zIndex(3)
                         .transition(
                             .asymmetric(
-                                insertion:
-                                .opacity.combined(with: .scale(scale: 0.9)),
-                                    
-                                removal:
-                                .opacity.combined(with: .scale(scale: 1.0))
+                                insertion: .move(edge: .bottom),
+                                removal: .move(edge: .bottom)
                             )
                         )
                 }
             }
-                
-            LayerActions {
-                LayerButton(
-                    id: "cancel",
-                    text: "Cancel",
-                    color: Color(.systemOrange)
-                )
-                    
-                LayerButton(
-                    id: "continue",
-                    text: "Continue",
-                    color: Color(.systemBlue)
-                ) {
-                    withAnimation(.snappy) {
-                        index = (index + 1) % 4
-                    }
+        }
+        .onTapGesture {
+            if show {
+                withAnimation(.snappy(duration: 1)) {
+                    show.toggle()
                 }
             }
-        }
+            else {
+                withAnimation(.snappy) {
+                    show.toggle()
+                }
+            }
+        }y
     }
 }
 
 #Preview {
-    LayerBackground {
-        ContentView()
-    }
+    ContentView()
 }

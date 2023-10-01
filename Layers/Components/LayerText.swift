@@ -7,23 +7,6 @@
 
 import SwiftUI
 
-private struct FullWidthText: View {
-    @State var text: AnyView
-
-    public init<Content>(@ViewBuilder text: @escaping () -> Content) where Content: View {
-        self.text = AnyView(text())
-    }
-
-    var body: some View {
-        HStack {
-            text
-
-            Spacer()
-        }
-        .frame(maxWidth: .infinity)
-    }
-}
-
 struct LayerTitle: View {
     @State public var title: String
 
@@ -53,15 +36,4 @@ struct LayerDescription: View {
         .transition(.opacity.combined(with: .scale(scale: 1.0)))
     }
 }
-
-#Preview("Title", traits: .sizeThatFitsLayout) {
-    LayerTitle(title: "Heading")
-}
-
-#Preview("Description", traits: .sizeThatFitsLayout) {
-    LayerDescription(description:
-        """
-        Consequat cillum amet sint elit ut ut exercitation. Excepteur consectetur pariatur nisi.
-        """
-    )
-}
+ 

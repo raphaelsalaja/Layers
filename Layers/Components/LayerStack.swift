@@ -24,6 +24,7 @@ struct LayerStack: View {
                     content
                 }
                 .padding(32)
+                .frame(maxWidth: .infinity)
                 .background(
                     Color(Constants.Colors.background)
                         .matchedGeometryEffect(
