@@ -20,10 +20,6 @@ public enum Constants {
         static let brightness: CGFloat = 0.85
     }
 
-    enum Styling {
-        static let padding: EdgeInsets = .init(top: 0, leading: 16, bottom: 0, trailing: 16)
-    }
-
     enum Animations {
         enum Namespaces {
             static let namespace: Namespace.ID = Namespace().wrappedValue

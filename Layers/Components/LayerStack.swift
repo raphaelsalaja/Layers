@@ -12,13 +12,16 @@ struct LayerStack: View {
 
     var content: AnyView
 
-    public init<Content>(@ViewBuilder content: @escaping () -> Content) where Content: View {
+    public init<Content>(
+        @ViewBuilder content: @escaping () -> Content) where Content: View
+    {
         self.content = AnyView(content())
     }
 
     var body: some View {
         VStack {
             Spacer()
+
             ZStack {
                 VStack(alignment: .leading, spacing: 24) {
                     content
@@ -41,13 +44,20 @@ struct LayerStack: View {
                 }
             }
         }
-        .layerPadding()
+        .padding(
+            EdgeInsets(
+                top: 0,
+                leading: 16,
+                bottom: 0,
+                trailing: 16
+            )
+        )
     }
 }
 
 #Preview {
     ZStack {
-        Color(.black.opacity(0.25)).ignoresSafeArea()
+        LayerBackground()
 
         LayerStack {
             VStack {}

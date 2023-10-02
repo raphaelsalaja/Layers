@@ -92,14 +92,28 @@ struct Layer_Example: View {
                         )
                 }
             }
-                
-            LayerButton(
-                text: $action,
-                color: Color(.systemBlue)
-            ) {
-                withAnimation(.smooth) {
-                    index = (index + 1) % 4
-                    action = actions[index][0]
+            if index == 3 {
+                LayerButton(
+                    text: $action,
+                    color: Color(.systemBlue),
+                    icon: "photo"
+                ) {
+                    withAnimation(.smooth) {
+                        index = (index + 1) % 4
+                        action = actions[index][0]
+                    }
+                }
+            }
+            else {
+                LayerButton(
+                    text: $action,
+                    color: Color(.systemBlue),
+                    icon: ""
+                ) {
+                    withAnimation(.smooth) {
+                        index = (index + 1) % 4
+                        action = actions[index][0]
+                    }
                 }
             }
         }

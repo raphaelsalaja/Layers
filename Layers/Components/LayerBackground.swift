@@ -8,10 +8,22 @@
 import SwiftUI
 
 struct LayerBackground: View {
+    @State private var z: Double = 0
+    @State private var opacity: Double
+    @State private var color: Color
+
+    internal init(z: Double = 0,
+                  opacity: Double = 0.25,
+                  color: Color = .black)
+    {
+        self.z = z
+        self.opacity = opacity
+        self.color = color
+    }
+
     var body: some View {
         ZStack {
-            Color(.black.opacity(0.25))
-                .ignoresSafeArea()
-        }
+            Color(color.opacity(opacity)).ignoresSafeArea()
+        }.zIndex(z)
     }
 }

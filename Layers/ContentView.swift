@@ -46,7 +46,7 @@ struct ContentView: View {
                     show.toggle()
                 }
             }
-        }y
+        }
     }
 }
 
