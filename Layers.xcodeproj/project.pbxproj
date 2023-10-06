@@ -12,13 +12,8 @@
 		111150292AC8CCE100C0D356 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 111150282AC8CCE100C0D356 /* Preview Assets.xcassets */; };
 		111150412AC8CD5A00C0D356 /* Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111150302AC8CD5A00C0D356 /* Layer.swift */; };
 		1111504B2AC8CD5A00C0D356 /* LayerExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111503A2AC8CD5A00C0D356 /* LayerExample.swift */; };
-		1111504C2AC8CD5A00C0D356 /* LayerConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111503C2AC8CD5A00C0D356 /* LayerConstants.swift */; };
-		111150512AC96F4500C0D356 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111150502AC96F4500C0D356 /* View+Extensions.swift */; };
-		118DD3D62ACB0F6300B03E88 /* Modifiers+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118DD3D52ACB0F6300B03E88 /* Modifiers+Extensions.swift */; };
-		118DD3D82ACB101000B03E88 /* ButtonStyle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118DD3D72ACB101000B03E88 /* ButtonStyle+Extensions.swift */; };
-		11C5D0ED2AD021CF004A1474 /* LayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C5D0EC2AD021CF004A1474 /* LayerModel.swift */; };
-		11C5D0F12AD03F21004A1474 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C5D0F02AD03F21004A1474 /* Color+Extensions.swift */; };
 		11C5D0F62AD0413F004A1474 /* LayerExampleComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C5D0F52AD0413F004A1474 /* LayerExampleComponents.swift */; };
+		11C5D0F92AD04B34004A1474 /* Layer+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C5D0F82AD04B34004A1474 /* Layer+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,13 +23,8 @@
 		111150282AC8CCE100C0D356 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		111150302AC8CD5A00C0D356 /* Layer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layer.swift; sourceTree = "<group>"; };
 		1111503A2AC8CD5A00C0D356 /* LayerExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayerExample.swift; sourceTree = "<group>"; };
-		1111503C2AC8CD5A00C0D356 /* LayerConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayerConstants.swift; sourceTree = "<group>"; };
-		111150502AC96F4500C0D356 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
-		118DD3D52ACB0F6300B03E88 /* Modifiers+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Modifiers+Extensions.swift"; sourceTree = "<group>"; };
-		118DD3D72ACB101000B03E88 /* ButtonStyle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ButtonStyle+Extensions.swift"; sourceTree = "<group>"; };
-		11C5D0EC2AD021CF004A1474 /* LayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerModel.swift; sourceTree = "<group>"; };
-		11C5D0F02AD03F21004A1474 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		11C5D0F52AD0413F004A1474 /* LayerExampleComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerExampleComponents.swift; sourceTree = "<group>"; };
+		11C5D0F82AD04B34004A1474 /* Layer+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Layer+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,10 +59,9 @@
 			children = (
 				111150212AC8CCDF00C0D356 /* LayersApp.swift */,
 				111150252AC8CCE100C0D356 /* Assets.xcassets */,
-				11C5D0EE2AD03DAA004A1474 /* Example */,
-				118DD3D42ACB0F4D00B03E88 /* Helpers */,
-				111150272AC8CCE100C0D356 /* Preview Content */,
 				11C5D0F72AD042AC004A1474 /* Source */,
+				11C5D0EE2AD03DAA004A1474 /* Example */,
+				111150272AC8CCE100C0D356 /* Preview Content */,
 			);
 			path = Layers;
 			sourceTree = "<group>";
@@ -83,17 +72,6 @@
 				111150282AC8CCE100C0D356 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		118DD3D42ACB0F4D00B03E88 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				111150502AC96F4500C0D356 /* View+Extensions.swift */,
-				118DD3D52ACB0F6300B03E88 /* Modifiers+Extensions.swift */,
-				118DD3D72ACB101000B03E88 /* ButtonStyle+Extensions.swift */,
-				11C5D0F02AD03F21004A1474 /* Color+Extensions.swift */,
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 		11C5D0EE2AD03DAA004A1474 /* Example */ = {
@@ -109,8 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				111150302AC8CD5A00C0D356 /* Layer.swift */,
-				1111503C2AC8CD5A00C0D356 /* LayerConstants.swift */,
-				11C5D0EC2AD021CF004A1474 /* LayerModel.swift */,
+				11C5D0F82AD04B34004A1474 /* Layer+Extensions.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -193,12 +170,7 @@
 				11C5D0F62AD0413F004A1474 /* LayerExampleComponents.swift in Sources */,
 				1111504B2AC8CD5A00C0D356 /* LayerExample.swift in Sources */,
 				111150222AC8CCDF00C0D356 /* LayersApp.swift in Sources */,
-				118DD3D62ACB0F6300B03E88 /* Modifiers+Extensions.swift in Sources */,
-				111150512AC96F4500C0D356 /* View+Extensions.swift in Sources */,
-				1111504C2AC8CD5A00C0D356 /* LayerConstants.swift in Sources */,
-				118DD3D82ACB101000B03E88 /* ButtonStyle+Extensions.swift in Sources */,
-				11C5D0F12AD03F21004A1474 /* Color+Extensions.swift in Sources */,
-				11C5D0ED2AD021CF004A1474 /* LayerModel.swift in Sources */,
+				11C5D0F92AD04B34004A1474 /* Layer+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -168,7 +168,7 @@ struct ExampleContent1: View {
         VStack {
             RoundedRectangle(cornerRadius: 20)
                 .fill(Color(.tertiarySystemFill))
-                .frame(maxWidth: 300, maxHeight: 64)
+                .frame(maxWidth: 300, maxHeight: 300)
         }
     }
 }
@@ -176,18 +176,24 @@ struct ExampleContent1: View {
 struct ExampleContent2: View {
     var body: some View {
         RoundedRectangle(cornerRadius: 20)
-            .fill(Color(.systemGray4))
-            .frame(maxWidth: 300, maxHeight: 100)
-            .shadow(color: Color(.systemGray4), radius: 10, x: 0, y: 5)
+            .fill(Color(.tertiarySystemFill))
+            .frame(maxWidth: 300, maxHeight: 300)
     }
 }
 
 struct ExampleContent3: View {
     var body: some View {
         RoundedRectangle(cornerRadius: 20)
-            .fill(Color(.systemGray4))
-            .frame(maxWidth: 300, maxHeight: 150)
-            .shadow(color: Color(.systemGray4), radius: 10, x: 0, y: 5)
+            .fill(Color(.tertiarySystemFill))
+            .frame(maxWidth: 300, maxHeight: 300)
+    }
+}
+
+#Preview {
+    VStack {
+        ExampleContent1()
+        ExampleContent2()
+        ExampleContent3()
     }
 }
 
