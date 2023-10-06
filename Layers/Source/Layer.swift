@@ -41,13 +41,13 @@ class LayerModel {
     }
 
     func next() {
-        withAnimation(.bouncy) {
+        withAnimation(.snappy) {
             index = (index + 1) % max
         }
     }
 
     func previous() {
-        withAnimation(.bouncy) {
+        withAnimation(.snappy) {
             if index == 0 {
                 index = max - 1
             } else {
@@ -57,7 +57,7 @@ class LayerModel {
     }
 
     func set(index: Int) {
-        withAnimation(.bouncy) {
+        withAnimation(.snappy) {
             self.index = index
         }
     }

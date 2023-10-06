@@ -23,7 +23,7 @@ struct LayerExample: View {
             2: AnyView(ExampleContent3()),
         ],
         buttons: [
-            0: [["Cancel": "xmark.circle"], ["Continue": ""]],
+            0: [["Cancel": "xmark.circle"], ["Continue": "checkmark.circle"]],
             1: [["Cancel": "xmark.circle"], ["Continue": "checkmark.circle"]],
             2: [["Cancel": "xmark.circle"], ["Continue": "checkmark.circle"]],
         ]
@@ -36,19 +36,6 @@ struct LayerExample: View {
 
             layers.getCurrentContent()
                 .id("layer.stack.content.\(layers.index)")
-                .matchedGeometryEffect(
-                    id: "layer.image.content",
-                    in: LayerConstants.namespace
-                )
-                .transition(
-                    .asymmetric(
-                        insertion:
-                        .opacity.animation(.default.delay(0.30))
-                            .combined(
-                                with: .scale(scale: 0.9).animation(.default.delay(0.30))),
-                        removal: .opacity
-                    )
-                )
 
             HStack {
                 if !layers.getCurrentButtons()[0].isEmpty {
@@ -62,7 +49,7 @@ struct LayerExample: View {
                 if !layers.getCurrentButtons()[1].isEmpty {
                     LayerButton(text: Binding.constant(layers.getCurrentButtons()[1].keys.first ?? ""),
                                 icon: Binding.constant(layers.getCurrentButtons()[1].values.first ?? ""),
-                                background: .green)
+                                background: .blue)
                     {
                         layers.next()
                     }
@@ -73,6 +60,20 @@ struct LayerExample: View {
 }
 
 // MARK: - Preview
+
+struct LayerExamplePreview: View {
+    var body: some View {
+        ZStack {
+            Color(.black.opacity(0.25))
+                .ignoresSafeArea()
+                .zIndex(1)
+
+            LayerExample()
+                .zIndex(2)
+        }
+    }
+}
+
 
 #Preview() {
     ZStack {

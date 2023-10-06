@@ -5,6 +5,7 @@
 //  Created by Raphael Salaja on 06/10/2023.
 //
 
+import MapKit
 import SwiftUI
 
 // MARK: - Example Text Fields
@@ -34,11 +35,11 @@ struct ExampleTextField: View {
 
     var body: some View {
         TextField(placeholder, text: $input, axis: .vertical)
-            .font(.system(.body, design: .rounded).weight(.medium))
-            .multilineTextAlignment(.leading)
             .padding(20)
-            .foregroundColor(Color(.label))
-            .background(Color(.systemGray6))
+            .font(.system(.body, design: .rounded, weight: .bold))
+            .multilineTextAlignment(.leading)
+            .foregroundStyle(.secondary)
+            .background(Color(.tertiarySystemFill))
             .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
             .lineLimit(variation.rawValue, reservesSpace: true)
     }
@@ -83,7 +84,7 @@ struct ExampleHeader1: View {
                 )
 
             FullWidthText(center: true) {
-                Text("Heading 1")
+                Text("Share Post")
                     .fixedSize()
                     .font(.system(.title3, design: .rounded, weight: .bold))
                     .multilineTextAlignment(.leading)
@@ -109,7 +110,7 @@ struct ExampleHeader2: View {
     var body: some View {
         HStack {
             FullWidthText {
-                Text("Heading 2")
+                Text("Attach Message")
                     .fixedSize()
                     .font(.system(.title3, design: .rounded, weight: .bold))
                     .multilineTextAlignment(.leading)
@@ -141,7 +142,7 @@ struct ExampleHeader3: View {
                 )
 
             FullWidthText(center: true) {
-                Text("Heading 3")
+                Text("Confirm Post")
                     .fixedSize()
                     .font(.system(.title3, design: .rounded, weight: .bold))
                     .multilineTextAlignment(.leading)
@@ -165,27 +166,178 @@ struct ExampleHeader3: View {
 
 struct ExampleContent1: View {
     var body: some View {
-        VStack {
-            RoundedRectangle(cornerRadius: 20)
-                .fill(Color(.tertiarySystemFill))
+        VStack(spacing: 16) {
+            HStack(alignment: .top) {
+                VStack(alignment: .leading) {
+                    Text("Name")
+                        .font(.system(.footnote, design: .rounded, weight: .bold))
+                        .multilineTextAlignment(.leading)
+                        .foregroundStyle(.secondary)
+
+                    Text("Smart Reaction")
+                        .font(.system(.callout, design: .rounded, weight: .bold))
+                        .multilineTextAlignment(.leading)
+                        .foregroundStyle(.primary)
+                }
+
+                Spacer()
+
+                VStack(alignment: .trailing) {
+                    Text("Format")
+                        .font(.system(.footnote, design: .rounded, weight: .bold))
+                        .multilineTextAlignment(.leading)
+                        .foregroundStyle(.secondary)
+
+                    Text("JPEG")
+                        .font(.system(.callout, design: .rounded, weight: .bold))
+                        .multilineTextAlignment(.leading)
+                        .foregroundStyle(.primary)
+                }
+            }
+            .padding()
+            .frame(maxWidth: 300)
+            .background(Color(.tertiarySystemFill))
+            .foregroundStyle(.black)
+            .clipShape(RoundedRectangle(cornerRadius: 20))
+            .matchedGeometryEffect(
+                id: "layer.content.image.details",
+                in: LayerConstants.namespace
+            )
+
+            Image(.smart)
+                .resizable()
                 .frame(maxWidth: 300, maxHeight: 300)
+                .clipShape(RoundedRectangle(cornerRadius: 20))
+                .transition(.scale(scale: 1.0))
+                .matchedGeometryEffect(
+                    id: "layer.content.image",
+                    in: LayerConstants.namespace
+                )
+
+            HStack(alignment: .top) {
+                HStack {
+                    Image(systemName: "paperplane")
+                        .font(.system(.callout, design: .rounded, weight: .bold))
+                        .foregroundColor(Color(.systemGray))
+
+                    Text("Recipient")
+                        .font(.system(.callout, design: .rounded, weight: .bold))
+                        .multilineTextAlignment(.leading)
+                        .foregroundStyle(.secondary)
+                }
+
+                Spacer()
+
+                Text("@raphaelsalaja")
+                    .font(.system(.callout, design: .rounded, weight: .bold))
+                    .multilineTextAlignment(.leading)
+                    .foregroundStyle(.primary)
+            }
+            .padding()
+            .frame(maxWidth: 300)
+            .background(Color(.tertiarySystemFill))
+            .foregroundStyle(.black)
+            .clipShape(RoundedRectangle(cornerRadius: 20))
+            .matchedGeometryEffect(
+                id: "layer.content.recipient",
+                in: LayerConstants.namespace
+            )
         }
     }
 }
 
 struct ExampleContent2: View {
     var body: some View {
-        RoundedRectangle(cornerRadius: 20)
-            .fill(Color(.tertiarySystemFill))
-            .frame(maxWidth: 300, maxHeight: 300)
+        VStack(spacing: 16) {
+            ExampleTextField(input: "", placeholder: "Something meaningful...", variation: .extraLarge)
+                .matchedGeometryEffect(
+                    id: "layer.content.texfield",
+                    in: LayerConstants.namespace
+                )
+        }
     }
 }
 
 struct ExampleContent3: View {
     var body: some View {
-        RoundedRectangle(cornerRadius: 20)
-            .fill(Color(.tertiarySystemFill))
-            .frame(maxWidth: 300, maxHeight: 300)
+        VStack(spacing: 16) {
+            HStack(alignment: .top) {
+                HStack {
+                    Image(systemName: "paperplane")
+                        .font(.system(.callout, design: .rounded, weight: .bold))
+                        .foregroundColor(Color(.systemGray))
+
+                    Text("Recipient")
+                        .font(.system(.callout, design: .rounded, weight: .bold))
+                        .multilineTextAlignment(.leading)
+                        .foregroundStyle(.secondary)
+                }
+
+                Spacer()
+
+                Text("@raphaelsalaja")
+                    .font(.system(.callout, design: .rounded, weight: .bold))
+                    .multilineTextAlignment(.leading)
+                    .foregroundStyle(.primary)
+            }
+
+            Divider()
+
+            HStack {
+                VStack(alignment: .leading) {
+                    Text("Name")
+                        .font(.system(.footnote, design: .rounded, weight: .bold))
+                        .multilineTextAlignment(.leading)
+                        .foregroundStyle(.secondary)
+
+                    Text("Smart Reaction")
+                        .font(.system(.callout, design: .rounded, weight: .bold))
+                        .multilineTextAlignment(.leading)
+                        .foregroundStyle(.primary)
+                }
+
+                Spacer()
+
+                VStack(alignment: .trailing) {
+                    Text("Format")
+                        .font(.system(.footnote, design: .rounded, weight: .bold))
+                        .multilineTextAlignment(.leading)
+                        .foregroundStyle(.secondary)
+
+                    Text("JPEG")
+                        .font(.system(.callout, design: .rounded, weight: .bold))
+                        .multilineTextAlignment(.leading)
+                        .foregroundStyle(.primary)
+                }
+            }
+
+            Divider()
+
+            VStack(alignment: .leading) {
+                FullWidthText {
+                    Text("Message")
+                        .font(.system(.footnote, design: .rounded, weight: .bold))
+                        .multilineTextAlignment(.leading)
+                        .foregroundStyle(.secondary)
+                }
+
+                FullWidthText {
+                    Text("Sending this with lots of love, tell your friends I said hi.")
+                        .font(.system(.callout, design: .rounded, weight: .bold))
+                        .multilineTextAlignment(.leading)
+                        .foregroundStyle(.primary)
+                }
+            }
+        }
+        .padding()
+        .frame(maxWidth: 300)
+        .background(Color(.tertiarySystemFill))
+        .foregroundStyle(.black)
+        .clipShape(RoundedRectangle(cornerRadius: 20))
+        .matchedGeometryEffect(
+            id: "layer.content.final",
+            in: LayerConstants.namespace
+        )
     }
 }
 
