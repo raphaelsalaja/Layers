@@ -48,18 +48,23 @@ struct ContrastTextColor: ViewModifier {
     var background: Color
     var light: Color = .white
     var dark: Color = .black
+    var foregroundColor: Color? = nil
 
     func body(content: Content) -> some View {
-        content
-            .foregroundColor(background.isDark ? light : dark)
+        if let fgColor = foregroundColor {
+            return content.foregroundColor(fgColor)
+        } else {
+            return content.foregroundColor(background.isDark ? light : dark)
+        }
     }
 }
 
 extension View {
-    func contrastTextColor(background: Color, light: Color, dark: Color) -> some View {
-        modifier(ContrastTextColor(background: background, light: light, dark: dark))
+    func contrastTextColor(background: Color, light: Color = .white, dark: Color = .black, foregroundColor: Color? = nil) -> some View {
+        modifier(ContrastTextColor(background: background, light: light, dark: dark, foregroundColor: foregroundColor))
     }
 }
+
 
 extension Color {
     private enum Luminance {
