@@ -83,7 +83,7 @@ var body: some View {
 
 This setup allows you to customize your layers extensively without diving into numerous pages or extraneous files. Future iterations will further streamline this workflow.
 
-##Contributing
+## Contributing
 
 We welcome and encourage contributions to this project. If you have bug fixes or new features in mind, please create a new issue to discuss them. If you're interested in contributing code, fork the repository and submit a pull request. Make sure to document your changes and thoroughly test the project before submitting a pull request. Maintain consistency with the project's code style.
 
