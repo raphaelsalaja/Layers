@@ -358,6 +358,7 @@ struct LayerButton: View {
     @State var id: Int
     @State var background: Color
     @State var disabled: Bool
+    @State var foregroundColor: Color? = nil
     @State var pressed = false
     @State var action: () -> Void
 
@@ -366,6 +367,7 @@ struct LayerButton: View {
         text: Binding<String> = .constant("Confirm"),
         icon: Binding<String> = .constant("checkmark.circle"),
         background: Color = Color(.systemBlue),
+        foregroundColor: Color? = nil,
         disabled: Bool = false,
         action: @escaping () -> Void = {}
     ) {
@@ -374,6 +376,7 @@ struct LayerButton: View {
         self._icon = icon
         self.action = action
         self.background = background
+        self.foregroundColor = foregroundColor
         self.disabled = disabled
     }
 
@@ -384,7 +387,7 @@ struct LayerButton: View {
                     if icon != "" {
                         Image(systemName: icon)
                             .font(.system(.body, design: .rounded, weight: .bold))
-                            .contrastTextColor(background: background, light: .white, dark: .black)
+                            .contrastTextColor(background: background, foregroundColor: foregroundColor)
                             .transition(.opacity)
                             .matchedGeometryEffect(
                                 id: "layer.button.icon.\(id)",
@@ -393,8 +396,8 @@ struct LayerButton: View {
                     }
 
                     Text(text)
+                        .contrastTextColor(background: background, foregroundColor: foregroundColor)
                         .font(.system(.body, design: .rounded, weight: .bold))
-                        .contrastTextColor(background: background, light: .white, dark: .black)
                         .transition(.scale(scale: 1.0))
                         .matchedGeometryEffect(
                             id: "layer.button.text.\(id)",
@@ -421,3 +424,4 @@ struct LayerButton: View {
         }
     }
 }
+
