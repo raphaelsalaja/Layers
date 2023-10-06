@@ -49,7 +49,9 @@ struct LayerExample: View {
                 if !layers.getCurrentButtons()[1].isEmpty {
                     LayerButton(text: Binding.constant(layers.getCurrentButtons()[1].keys.first ?? ""),
                                 icon: Binding.constant(layers.getCurrentButtons()[1].values.first ?? ""),
-                                background: .blue)
+                                background: .blue,
+                                foregroundColor: .orange
+                    )
                     {
                         layers.next()
                     }
