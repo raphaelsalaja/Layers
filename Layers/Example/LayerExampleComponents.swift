@@ -73,14 +73,14 @@ struct ExampleIcon: View {
 // MARK: - Example Headers
 
 struct ExampleHeader1: View {
-    @Namespace var namespace
+    @EnvironmentObject var namespaceWrapper: NamespaceWrapper
 
     var body: some View {
         HStack {
             ExampleIcon(icon: "questionmark")
                 .matchedGeometryEffect(
                     id: "layer.icon.left",
-                    in: LayerConstants.namespace
+                    in: namespaceWrapper.namespace
                 )
 
             FullWidthText(center: true) {
@@ -91,21 +91,21 @@ struct ExampleHeader1: View {
                     .transition(.scale(scale: 1.0))
                     .matchedGeometryEffect(
                         id: "layer.header",
-                        in: LayerConstants.namespace
+                        in: namespaceWrapper.namespace
                     )
             }
 
             ExampleIcon(icon: "xmark")
                 .matchedGeometryEffect(
                     id: "layer.icon.right",
-                    in: LayerConstants.namespace
+                    in: namespaceWrapper.namespace
                 )
         }
     }
 }
 
 struct ExampleHeader2: View {
-    @Namespace var namespace
+    @EnvironmentObject var namespaceWrapper: NamespaceWrapper
 
     var body: some View {
         HStack {
@@ -117,28 +117,28 @@ struct ExampleHeader2: View {
                     .transition(.scale(scale: 1.0))
                     .matchedGeometryEffect(
                         id: "layer.header",
-                        in: LayerConstants.namespace
+                        in: namespaceWrapper.namespace
                     )
             }
 
             ExampleIcon(icon: "xmark")
                 .matchedGeometryEffect(
                     id: "layer.icon.right",
-                    in: LayerConstants.namespace
+                    in: namespaceWrapper.namespace
                 )
         }
     }
 }
 
 struct ExampleHeader3: View {
-    @Namespace var namespace
+    @EnvironmentObject var namespaceWrapper: NamespaceWrapper
 
     var body: some View {
         HStack {
             ExampleIcon(icon: "questionmark")
                 .matchedGeometryEffect(
                     id: "layer.icon.left",
-                    in: LayerConstants.namespace
+                    in: namespaceWrapper.namespace
                 )
 
             FullWidthText(center: true) {
@@ -149,14 +149,14 @@ struct ExampleHeader3: View {
                     .transition(.scale(scale: 1.0))
                     .matchedGeometryEffect(
                         id: "layer.header",
-                        in: LayerConstants.namespace
+                        in: namespaceWrapper.namespace
                     )
             }
 
             ExampleIcon(icon: "xmark")
                 .matchedGeometryEffect(
                     id: "layer.icon.right",
-                    in: LayerConstants.namespace
+                    in: namespaceWrapper.namespace
                 )
         }
     }
@@ -165,6 +165,8 @@ struct ExampleHeader3: View {
 // MARK: - Example Content
 
 struct ExampleContent1: View {
+    @EnvironmentObject var namespaceWrapper: NamespaceWrapper
+
     var body: some View {
         VStack(spacing: 16) {
             HStack(alignment: .top) {
@@ -201,7 +203,7 @@ struct ExampleContent1: View {
             .clipShape(RoundedRectangle(cornerRadius: 20))
             .matchedGeometryEffect(
                 id: "layer.content.image.details",
-                in: LayerConstants.namespace
+                in: namespaceWrapper.namespace
             )
 
             Image(.smart)
@@ -211,7 +213,7 @@ struct ExampleContent1: View {
                 .transition(.scale(scale: 1.0))
                 .matchedGeometryEffect(
                     id: "layer.content.image",
-                    in: LayerConstants.namespace
+                    in: namespaceWrapper.namespace
                 )
 
             HStack(alignment: .top) {
@@ -240,25 +242,29 @@ struct ExampleContent1: View {
             .clipShape(RoundedRectangle(cornerRadius: 20))
             .matchedGeometryEffect(
                 id: "layer.content.recipient",
-                in: LayerConstants.namespace
+                in: namespaceWrapper.namespace
             )
         }
     }
 }
 
 struct ExampleContent2: View {
+    @EnvironmentObject var namespaceWrapper: NamespaceWrapper
+
     var body: some View {
         VStack(spacing: 16) {
             ExampleTextField(input: "", placeholder: "Something meaningful...", variation: .extraLarge)
                 .matchedGeometryEffect(
                     id: "layer.content.texfield",
-                    in: LayerConstants.namespace
+                    in: namespaceWrapper.namespace
                 )
         }
     }
 }
 
 struct ExampleContent3: View {
+    @EnvironmentObject var namespaceWrapper: NamespaceWrapper
+
     var body: some View {
         VStack(spacing: 16) {
             HStack(alignment: .top) {
@@ -336,7 +342,7 @@ struct ExampleContent3: View {
         .clipShape(RoundedRectangle(cornerRadius: 20))
         .matchedGeometryEffect(
             id: "layer.content.final",
-            in: LayerConstants.namespace
+            in: namespaceWrapper.namespace
         )
     }
 }
@@ -352,6 +358,8 @@ struct ExampleContent3: View {
 // MARK: - Example Buttons
 
 struct LayerButton: View {
+    @EnvironmentObject var namespaceWrapper: NamespaceWrapper
+
     @Binding var text: String
     @Binding var icon: String
 
@@ -391,7 +399,7 @@ struct LayerButton: View {
                             .transition(.opacity)
                             .matchedGeometryEffect(
                                 id: "layer.button.icon.\(id)",
-                                in: LayerConstants.namespace
+                                in: namespaceWrapper.namespace
                             )
                     }
 
@@ -401,7 +409,7 @@ struct LayerButton: View {
                         .transition(.scale(scale: 1.0))
                         .matchedGeometryEffect(
                             id: "layer.button.text.\(id)",
-                            in: LayerConstants.namespace
+                            in: namespaceWrapper.namespace
                         )
                 }
             }
@@ -424,4 +432,3 @@ struct LayerButton: View {
         }
     }
 }
-

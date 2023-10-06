@@ -49,9 +49,7 @@ struct LayerExample: View {
                 if !layers.getCurrentButtons()[1].isEmpty {
                     LayerButton(text: Binding.constant(layers.getCurrentButtons()[1].keys.first ?? ""),
                                 icon: Binding.constant(layers.getCurrentButtons()[1].values.first ?? ""),
-                                background: .blue,
-                                foregroundColor: .orange
-                    )
+                                background: .blue)
                     {
                         layers.next()
                     }
@@ -75,7 +73,6 @@ struct LayerExamplePreview: View {
         }
     }
 }
-
 
 #Preview() {
     ZStack {
