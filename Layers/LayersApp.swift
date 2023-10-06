@@ -11,7 +11,7 @@ import SwiftUI
 struct LayersApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LayerExample()
         }
     }
 }

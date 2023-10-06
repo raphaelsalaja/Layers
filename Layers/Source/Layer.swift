@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LayerStack: View {
+struct Layer: View {
     @Namespace private var layer
 
     var content: AnyView
@@ -52,15 +52,5 @@ struct LayerStack: View {
                 trailing: 16
             )
         )
-    }
-}
-
-#Preview {
-    ZStack {
-        LayerBackground()
-
-        LayerStack {
-            VStack {}
-        }
     }
 }

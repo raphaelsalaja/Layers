@@ -7,13 +7,13 @@
 
 import SwiftUI
 
+public enum LayerConstants {
+    static let namespace: Namespace.ID = Namespace().wrappedValue
+}
+
+
 public enum Constants {
-    enum Luminance {
-        static let red: CGFloat = 0.2126
-        static let green: CGFloat = 0.7152
-        static let blue: CGFloat = 0.0722
-        static let threshold: CGFloat = 0.7
-    }
+
 
     enum Scale {
         static let pressed: CGFloat = 0.85

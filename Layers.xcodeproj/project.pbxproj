@@ -8,53 +8,33 @@
 
 /* Begin PBXBuildFile section */
 		111150222AC8CCDF00C0D356 /* LayersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111150212AC8CCDF00C0D356 /* LayersApp.swift */; };
-		111150242AC8CCDF00C0D356 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111150232AC8CCDF00C0D356 /* ContentView.swift */; };
 		111150262AC8CCE100C0D356 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 111150252AC8CCE100C0D356 /* Assets.xcassets */; };
 		111150292AC8CCE100C0D356 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 111150282AC8CCE100C0D356 /* Preview Assets.xcassets */; };
-		111150412AC8CD5A00C0D356 /* LayerStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111150302AC8CD5A00C0D356 /* LayerStack.swift */; };
-		111150422AC8CD5A00C0D356 /* LayerImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111150312AC8CD5A00C0D356 /* LayerImagePicker.swift */; };
-		111150432AC8CD5A00C0D356 /* LayerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111150322AC8CD5A00C0D356 /* LayerButton.swift */; };
-		111150442AC8CD5A00C0D356 /* LayerHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111150332AC8CD5A00C0D356 /* LayerHeader.swift */; };
-		111150452AC8CD5A00C0D356 /* LayerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111150342AC8CD5A00C0D356 /* LayerTextField.swift */; };
-		111150462AC8CD5A00C0D356 /* LayerIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111150352AC8CD5A00C0D356 /* LayerIcon.swift */; };
-		111150472AC8CD5A00C0D356 /* LayerText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111150362AC8CD5A00C0D356 /* LayerText.swift */; };
-		111150482AC8CD5A00C0D356 /* LayerContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111150372AC8CD5A00C0D356 /* LayerContent.swift */; };
-		111150492AC8CD5A00C0D356 /* LayerBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111150382AC8CD5A00C0D356 /* LayerBackground.swift */; };
-		1111504A2AC8CD5A00C0D356 /* LayerActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111150392AC8CD5A00C0D356 /* LayerActions.swift */; };
-		1111504B2AC8CD5A00C0D356 /* Layer+Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111503A2AC8CD5A00C0D356 /* Layer+Example.swift */; };
-		1111504C2AC8CD5A00C0D356 /* Layer+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111503C2AC8CD5A00C0D356 /* Layer+Constants.swift */; };
-		111150512AC96F4500C0D356 /* Layer+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111150502AC96F4500C0D356 /* Layer+Helpers.swift */; };
-		111150532AC99EAA00C0D356 /* Layer+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111150522AC99EAA00C0D356 /* Layer+Animations.swift */; };
-		111150562AC9B66F00C0D356 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 111150552AC9B66F00C0D356 /* ConfettiSwiftUI */; };
-		111150592AC9BD2300C0D356 /* FluidGradient in Frameworks */ = {isa = PBXBuildFile; productRef = 111150582AC9BD2300C0D356 /* FluidGradient */; };
+		111150412AC8CD5A00C0D356 /* Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111150302AC8CD5A00C0D356 /* Layer.swift */; };
+		1111504B2AC8CD5A00C0D356 /* LayerExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111503A2AC8CD5A00C0D356 /* LayerExample.swift */; };
+		1111504C2AC8CD5A00C0D356 /* LayerConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111503C2AC8CD5A00C0D356 /* LayerConstants.swift */; };
+		111150512AC96F4500C0D356 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111150502AC96F4500C0D356 /* View+Extensions.swift */; };
 		118DD3D62ACB0F6300B03E88 /* Modifiers+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118DD3D52ACB0F6300B03E88 /* Modifiers+Extensions.swift */; };
 		118DD3D82ACB101000B03E88 /* ButtonStyle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118DD3D72ACB101000B03E88 /* ButtonStyle+Extensions.swift */; };
-		118DD3DA2ACB105E00B03E88 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118DD3D92ACB105E00B03E88 /* Color+Extensions.swift */; };
+		11C5D0ED2AD021CF004A1474 /* LayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C5D0EC2AD021CF004A1474 /* LayerModel.swift */; };
+		11C5D0F12AD03F21004A1474 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C5D0F02AD03F21004A1474 /* Color+Extensions.swift */; };
+		11C5D0F62AD0413F004A1474 /* LayerExampleComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C5D0F52AD0413F004A1474 /* LayerExampleComponents.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1111501E2AC8CCDF00C0D356 /* Layers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Layers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		111150212AC8CCDF00C0D356 /* LayersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayersApp.swift; sourceTree = "<group>"; };
-		111150232AC8CCDF00C0D356 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		111150252AC8CCE100C0D356 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		111150282AC8CCE100C0D356 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		111150302AC8CD5A00C0D356 /* LayerStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayerStack.swift; sourceTree = "<group>"; };
-		111150312AC8CD5A00C0D356 /* LayerImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayerImagePicker.swift; sourceTree = "<group>"; };
-		111150322AC8CD5A00C0D356 /* LayerButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayerButton.swift; sourceTree = "<group>"; };
-		111150332AC8CD5A00C0D356 /* LayerHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayerHeader.swift; sourceTree = "<group>"; };
-		111150342AC8CD5A00C0D356 /* LayerTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayerTextField.swift; sourceTree = "<group>"; };
-		111150352AC8CD5A00C0D356 /* LayerIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayerIcon.swift; sourceTree = "<group>"; };
-		111150362AC8CD5A00C0D356 /* LayerText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayerText.swift; sourceTree = "<group>"; };
-		111150372AC8CD5A00C0D356 /* LayerContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayerContent.swift; sourceTree = "<group>"; };
-		111150382AC8CD5A00C0D356 /* LayerBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayerBackground.swift; sourceTree = "<group>"; };
-		111150392AC8CD5A00C0D356 /* LayerActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayerActions.swift; sourceTree = "<group>"; };
-		1111503A2AC8CD5A00C0D356 /* Layer+Example.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Layer+Example.swift"; sourceTree = "<group>"; };
-		1111503C2AC8CD5A00C0D356 /* Layer+Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Layer+Constants.swift"; sourceTree = "<group>"; };
-		111150502AC96F4500C0D356 /* Layer+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Layer+Helpers.swift"; sourceTree = "<group>"; };
-		111150522AC99EAA00C0D356 /* Layer+Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Layer+Animations.swift"; sourceTree = "<group>"; };
+		111150302AC8CD5A00C0D356 /* Layer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layer.swift; sourceTree = "<group>"; };
+		1111503A2AC8CD5A00C0D356 /* LayerExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayerExample.swift; sourceTree = "<group>"; };
+		1111503C2AC8CD5A00C0D356 /* LayerConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayerConstants.swift; sourceTree = "<group>"; };
+		111150502AC96F4500C0D356 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		118DD3D52ACB0F6300B03E88 /* Modifiers+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Modifiers+Extensions.swift"; sourceTree = "<group>"; };
 		118DD3D72ACB101000B03E88 /* ButtonStyle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ButtonStyle+Extensions.swift"; sourceTree = "<group>"; };
-		118DD3D92ACB105E00B03E88 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		11C5D0EC2AD021CF004A1474 /* LayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerModel.swift; sourceTree = "<group>"; };
+		11C5D0F02AD03F21004A1474 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		11C5D0F52AD0413F004A1474 /* LayerExampleComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerExampleComponents.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,8 +42,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				111150562AC9B66F00C0D356 /* ConfettiSwiftUI in Frameworks */,
-				111150592AC9BD2300C0D356 /* FluidGradient in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,13 +67,12 @@
 		111150202AC8CCDF00C0D356 /* Layers */ = {
 			isa = PBXGroup;
 			children = (
-				118DD3D42ACB0F4D00B03E88 /* Helpers */,
-				1111502F2AC8CD5A00C0D356 /* Components */,
-				1111503B2AC8CD5A00C0D356 /* Utilities */,
 				111150212AC8CCDF00C0D356 /* LayersApp.swift */,
-				111150232AC8CCDF00C0D356 /* ContentView.swift */,
 				111150252AC8CCE100C0D356 /* Assets.xcassets */,
+				11C5D0EE2AD03DAA004A1474 /* Example */,
+				118DD3D42ACB0F4D00B03E88 /* Helpers */,
 				111150272AC8CCE100C0D356 /* Preview Content */,
+				11C5D0F72AD042AC004A1474 /* Source */,
 			);
 			path = Layers;
 			sourceTree = "<group>";
@@ -108,42 +85,34 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		1111502F2AC8CD5A00C0D356 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				111150302AC8CD5A00C0D356 /* LayerStack.swift */,
-				111150312AC8CD5A00C0D356 /* LayerImagePicker.swift */,
-				111150322AC8CD5A00C0D356 /* LayerButton.swift */,
-				111150332AC8CD5A00C0D356 /* LayerHeader.swift */,
-				111150342AC8CD5A00C0D356 /* LayerTextField.swift */,
-				111150352AC8CD5A00C0D356 /* LayerIcon.swift */,
-				111150362AC8CD5A00C0D356 /* LayerText.swift */,
-				111150372AC8CD5A00C0D356 /* LayerContent.swift */,
-				111150382AC8CD5A00C0D356 /* LayerBackground.swift */,
-				111150392AC8CD5A00C0D356 /* LayerActions.swift */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
-		1111503B2AC8CD5A00C0D356 /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				1111503A2AC8CD5A00C0D356 /* Layer+Example.swift */,
-				1111503C2AC8CD5A00C0D356 /* Layer+Constants.swift */,
-				111150502AC96F4500C0D356 /* Layer+Helpers.swift */,
-				111150522AC99EAA00C0D356 /* Layer+Animations.swift */,
-			);
-			path = Utilities;
-			sourceTree = "<group>";
-		};
 		118DD3D42ACB0F4D00B03E88 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				111150502AC96F4500C0D356 /* View+Extensions.swift */,
 				118DD3D52ACB0F6300B03E88 /* Modifiers+Extensions.swift */,
 				118DD3D72ACB101000B03E88 /* ButtonStyle+Extensions.swift */,
-				118DD3D92ACB105E00B03E88 /* Color+Extensions.swift */,
+				11C5D0F02AD03F21004A1474 /* Color+Extensions.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		11C5D0EE2AD03DAA004A1474 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				1111503A2AC8CD5A00C0D356 /* LayerExample.swift */,
+				11C5D0F52AD0413F004A1474 /* LayerExampleComponents.swift */,
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
+		11C5D0F72AD042AC004A1474 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				111150302AC8CD5A00C0D356 /* Layer.swift */,
+				1111503C2AC8CD5A00C0D356 /* LayerConstants.swift */,
+				11C5D0EC2AD021CF004A1474 /* LayerModel.swift */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,8 +132,6 @@
 			);
 			name = Layers;
 			packageProductDependencies = (
-				111150552AC9B66F00C0D356 /* ConfettiSwiftUI */,
-				111150582AC9BD2300C0D356 /* FluidGradient */,
 			);
 			productName = Layers;
 			productReference = 1111501E2AC8CCDF00C0D356 /* Layers.app */;
@@ -195,8 +162,6 @@
 			);
 			mainGroup = 111150152AC8CCDF00C0D356;
 			packageReferences = (
-				111150542AC9B66F00C0D356 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
-				111150572AC9BD2300C0D356 /* XCRemoteSwiftPackageReference "FluidGradient" */,
 			);
 			productRefGroup = 1111501F2AC8CCDF00C0D356 /* Products */;
 			projectDirPath = "";
@@ -224,25 +189,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				111150492AC8CD5A00C0D356 /* LayerBackground.swift in Sources */,
-				111150462AC8CD5A00C0D356 /* LayerIcon.swift in Sources */,
-				111150482AC8CD5A00C0D356 /* LayerContent.swift in Sources */,
-				111150412AC8CD5A00C0D356 /* LayerStack.swift in Sources */,
-				1111504B2AC8CD5A00C0D356 /* Layer+Example.swift in Sources */,
-				111150472AC8CD5A00C0D356 /* LayerText.swift in Sources */,
-				111150242AC8CCDF00C0D356 /* ContentView.swift in Sources */,
+				111150412AC8CD5A00C0D356 /* Layer.swift in Sources */,
+				11C5D0F62AD0413F004A1474 /* LayerExampleComponents.swift in Sources */,
+				1111504B2AC8CD5A00C0D356 /* LayerExample.swift in Sources */,
 				111150222AC8CCDF00C0D356 /* LayersApp.swift in Sources */,
 				118DD3D62ACB0F6300B03E88 /* Modifiers+Extensions.swift in Sources */,
-				1111504A2AC8CD5A00C0D356 /* LayerActions.swift in Sources */,
-				111150512AC96F4500C0D356 /* Layer+Helpers.swift in Sources */,
-				111150532AC99EAA00C0D356 /* Layer+Animations.swift in Sources */,
-				1111504C2AC8CD5A00C0D356 /* Layer+Constants.swift in Sources */,
+				111150512AC96F4500C0D356 /* View+Extensions.swift in Sources */,
+				1111504C2AC8CD5A00C0D356 /* LayerConstants.swift in Sources */,
 				118DD3D82ACB101000B03E88 /* ButtonStyle+Extensions.swift in Sources */,
-				118DD3DA2ACB105E00B03E88 /* Color+Extensions.swift in Sources */,
-				111150432AC8CD5A00C0D356 /* LayerButton.swift in Sources */,
-				111150442AC8CD5A00C0D356 /* LayerHeader.swift in Sources */,
-				111150422AC8CD5A00C0D356 /* LayerImagePicker.swift in Sources */,
-				111150452AC8CD5A00C0D356 /* LayerTextField.swift in Sources */,
+				11C5D0F12AD03F21004A1474 /* Color+Extensions.swift in Sources */,
+				11C5D0ED2AD021CF004A1474 /* LayerModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,38 +404,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		111150542AC9B66F00C0D356 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/simibac/ConfettiSwiftUI.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.1.0;
-			};
-		};
-		111150572AC9BD2300C0D356 /* XCRemoteSwiftPackageReference "FluidGradient" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Cindori/FluidGradient";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		111150552AC9B66F00C0D356 /* ConfettiSwiftUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 111150542AC9B66F00C0D356 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
-			productName = ConfettiSwiftUI;
-		};
-		111150582AC9BD2300C0D356 /* FluidGradient */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 111150572AC9BD2300C0D356 /* XCRemoteSwiftPackageReference "FluidGradient" */;
-			productName = FluidGradient;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 111150162AC8CCDF00C0D356 /* Project object */;
 }

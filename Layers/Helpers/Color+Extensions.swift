@@ -2,13 +2,19 @@
 //  Color+Extensions.swift
 //  Layers
 //
-//  Created by Raphael Salaja on 02/10/2023.
+//  Created by Raphael Salaja on 06/10/2023.
 //
 
 import SwiftUI
 
+private enum Luminance {
+    static let red: CGFloat = 0.2126
+    static let green: CGFloat = 0.7152
+    static let blue: CGFloat = 0.0722
+    static let threshold: CGFloat = 0.7
+}
+
 extension Color {
-    
     /// Returns a Boolean value indicating whether the color is dark.
     var isDark: Bool {
         var red: CGFloat = 0
@@ -21,10 +27,10 @@ extension Color {
         }
 
         let luminance =
-            Constants.Luminance.red * red +
-            Constants.Luminance.green * green +
-            Constants.Luminance.blue * blue
+            Luminance.red * red +
+            Luminance.green * green +
+            Luminance.blue * blue
 
-        return luminance < Constants.Luminance.threshold
+        return luminance < Luminance.threshold
     }
 }
